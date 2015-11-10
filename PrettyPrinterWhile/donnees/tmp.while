@@ -1,0 +1,6 @@
+function coucou:
+read X,Y
+%
+Z:=X+Y
+%
+write Z

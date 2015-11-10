@@ -7,7 +7,7 @@
   
 ### History
 
-  * 2015.11.6 Nous avons cree notre groupe.
+  * 2015.11.6 Nous avons créé notre groupe.
   * 2015.11.8 Github
   
 ### Membre
@@ -15,8 +15,10 @@
   * Bastien Cloarec
   * Baptiste Buron
   * Li Haozhi
-  * Youssouf Maiga
+  * Youssouf Maiga (Chef de projet)
   * Salifou Nguetcheu
-  
+
+TO DO : TROUVER UN RESPONSABLE DE VALIDATION : COurte paille si pas de volontaire !
+
 Fait à Rennes
 2015.11.8
