@@ -1,0 +1,23 @@
+function bonjour : read X,Y,Z,E%nop;X,Y,Z:=x,y,z%write Z
+function li : read Y,TRUC%nop;for e do nop od%write X,Yhufkshfid!
+function allo : read Z,Salifou!%nop;nop
+;nop;while truc do while t do nop;if x then if e then nop else foreach z in a do nop;nop od fi;nop fi od od;
+nop%write Youssouf!,Truc,T
+
+
+
+function ali : read Steven!,Mohammed%nop;nop;nop;if nil then nop fi; if test2 then Truc!,T2:=t,t2;nop;Toto :=b,c,d else nop;nop fi%write Esir,ESIR_RIDOUX!
+
+function	p	:	read	X	%	Y		
+																		:=	nil	;	
+while	X	do	Y							:=	(cons	
+																		(hd	X	
+)Y)	;	X:=(tl		
+															X)	od	%	write	Y
+															
+function p2:read X,Y,Z%while (cons X) do X:=z od
+;Y:=(nil) and X=?Y or nil=?truc
+
+ and (nil) and (nil) and (nil);	while X do		Y:=(cons
+	(hd X) Y
+);		X:=(tl X)	od%write Y function add:read X,Y%	Z:=X+Y%write Z
