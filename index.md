@@ -144,7 +144,7 @@ fin = Y;
 X = new BinTree(a,b) 
 ``` 
 
-## Expressions :
+## Code  humain
 
 ### E -> nil   
     {E.code = nil}
@@ -168,8 +168,6 @@ X = new BinTree(a,b)
 
 ### E -> tl X
     {E.code = <tl,E,X,_> }
-
-## Commandes :
 
 ### C->nop
     {C.code = ℇ}
@@ -217,9 +215,6 @@ X = new BinTree(a,b)
      C.code = debut: E.code '.' E.si-vrai: X.code '.' X.si-vrai: C'.code '.' <goto debut,_,_,_>
      '.' X.si-faux '.' E.si-faux:}
 
-
-## Expressions And, Or, Not, Eq:
-
 ### E -> E' and E''
     {E'.si-faux  = E.si-faux;
      E'.si-vrai  = new-label();
@@ -238,4 +233,85 @@ X = new BinTree(a,b)
     {E'.si-faux = E.si-vrai;
      E'.si-vrai = E.si-faux	;		
      E.code	= E'.code}	
+## Code 3@ - Machine
 
+### nop
+
+```
+	<nop,  _ ,  _,  _>
+```
+
+### C1;C2
+
+```
+	<C1,  _ ,  _,  _>
+	<C2,  _ ,  _,  _>
+```
+
+### X := (cons a b)
+
+```
+	<cons, X, a, b>
+```
+
+### X := (list a b)
+
+```
+	<list, X, a, b>
+```
+
+### X := (tl Y)
+
+```
+	<tl, X, Y, _>
+```
+
+### X := (hd Y)
+
+```
+	<hd, X, Y, _>
+```
+
+### if E then C fi
+
+```
+	<if  E,  _ ,  C , _> ||  <if  E C,  _ ,  _ , _>
+```
+
+### if E then C1 else C2 fi
+
+```
+	<if E C1 C2, _,  _ , _>
+```
+
+### if E then C1 else C2 fi
+
+```
+	<if E C1 C2, _,  _ , _>
+```
+
+### While E do C od
+```
+	<while E C, _, _,_>
+```
+
+### for E do C od
+```
+	<for E C, _,  _ , _>
+```
+
+### foreach X in E do C' od
+```
+	<cons,  Y,  X, _>
+	<for Y C, _,  _ , _>
+```
+
+###  R -> E and E'
+```
+	<and,R,E,E'>
+```
+
+###  R -> E or E'
+```
+	<or,R,E,E'>
+```
