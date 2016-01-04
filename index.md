@@ -23,10 +23,10 @@ En 2012, l'ensemble des navigateurs web modernes disposent d'un ramasse-miettes 
 ### Délivrables
 1. Pretty Printer
 2. Table des symboles
-3. ?
+3. Code 3@
 
 ## Spécification : Traduction de while en javascript
-Pas d'erreur à la l'exécution implique que toutes les variables doivent être initialisés. Nous nous arrogeons à ce qu'il n'y ait pas d'erreur à l’exécution.
+Pas d'erreur à la l'exécution implique que toutes les variables doivent être initialisés. Nous nous arrangeons à ce qu'il n'y ait pas d'erreur à l’exécution.
 
 ### Variable non initialisé :
 La valeur par défaut en while est nil ===> undefined
@@ -80,14 +80,14 @@ While (E!= nil)
 Sa traduction donne :
 
 ``` JavaScript
-Var cpt = value(E) // value retourne le nombre de noeud sur la branche droite
-for(var i = 0;i<cpt;i++)
+// Cette instruction est lancée par appel de fonction : function_for(E,cpt)
+cpt = value(E) // value retourne le nombre de noeud sur la branche droite
+for(var i = 0;i < cpt;i ++)
 {
     traduction(C);
 }
 ```
 ### 7. foreach X in E do C od
-
 ``` JavaScript
 for (let X of E)
 {
