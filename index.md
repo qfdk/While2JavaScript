@@ -80,19 +80,14 @@ while (E!= nil)
 Sa traduction donne :
 
 ``` JavaScript
-// Cette instruction est lancée par appel de fonction : function_for(E,cpt)
-cpt = value(E) // value retourne le nombre de noeud sur la branche droite
-for(var i = 0;i < cpt;i ++)
-{
-    traduction(C);
+int cpt0 = LibWh.nbNoeuds(E);
+for (var i0 = 0; i0 < cpt0; i0++){
+	traduction(C);
 }
+
 ```
 ### 7. foreach X in E do C od
 ``` JavaScript
-for (let X of E)
-{
-	traduction(C);
-}
 
 function function_foreach (X,E)
 {
