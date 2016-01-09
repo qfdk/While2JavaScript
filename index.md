@@ -39,7 +39,7 @@ Le rôle des commande est de modifier l'état de la mémoire.
 La commande nop ne fait rien. On la traduit par l'instruction 0+0 par exemple;
 
 ``` javascript
-   console.log()
+
 ```
 ### 2. Commande c1;c2:
 Nous devons exécuter C1 puis C2. La traduction en JavaScript donnera: 	
@@ -106,19 +106,21 @@ function function_foreach (X,E)
 ```
 
 
-### 8. V1,...,Vn = E1,...En
+### 8. V0,...,Vn = E0,...En
 Les Vi et les Ei designeront les traductions des noms de variable données par la table des variables.
 
 ```JavaScript
 var tampon = new Array();
-for (int i=1;i<=n;i++)
-{
-	tampon.push(Ei)
-}
-for(int i=1;i<=n;i++)
-{
-	Vi = tampon[i];
-}
+tampon.push(E0);
+tampon.push(E1);
+...
+tampon.push(En);
+
+V0 = tampon[0];
+V1 = tampon[1];
+...
+Vn = tampon[n];
+
 
 ```
 
@@ -134,7 +136,11 @@ for(int i=0;i<m;i++)
 }
 
 ```
+<<<<<<< HEAD
 ### 10. for X do X:=(cons nil X) od
+=======
+### 10. for X do X := Expr
+>>>>>>> origin/master
 X désignera la traduction du nom de variable X comme le définit la table des variables.
 
 ``` JavaScript
