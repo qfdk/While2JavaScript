@@ -80,7 +80,7 @@ while (E!= nil)
 Sa traduction donne :
 
 ``` JavaScript
-int cpt0 = LibWh2JS.countRight(E);
+var cpt0 = LibWh2JS.countRight(E);
 for (var i0 = 0; i0 < cpt0; i0++){
     traduction(C)
 }
