@@ -2,9 +2,11 @@
 ### Introduction
 Ce projet a pour objectif de compiler un programme écrit avec le langage While en un programme JavaScript. Nous travaillons en mode agile,les différents sprints ont une durée de une à deux semaines. A chaque fin de sprint,nous fournissons un délivrable pour construire le compilateur. Voici les membres de notre groupe :
 
-Bastien Cloarec && Baptiste Buron
-Haozhi Li && Youssouf Maiga
+Bastien Cloarec
+Haozhi Li
+Youssouf Maiga
 Salifou Nguetcheu
+Baptiste Buron
 
 ### Getting start
 Nous avons créé un dépôt git pour avoir une bonne gestion du projet
@@ -39,7 +41,7 @@ Le rôle des commande est de modifier l'état de la mémoire.
 La commande nop ne fait rien. On la traduit par l'instruction 0+0 par exemple;
 
 ``` javascript
-
+   console.log()
 ```
 ### 2. Commande c1;c2:
 Nous devons exécuter C1 puis C2. La traduction en JavaScript donnera: 	
@@ -78,14 +80,14 @@ while (E!= nil)
 Sa traduction donne :
 
 ``` JavaScript
-int cpt0 = LibWh.nbNoeuds(E);
+int cpt0 = LibWh2JS.countRight(E);
 for (var i0 = 0; i0 < cpt0; i0++){
-	traduction(C);
+    traduction(C)
 }
-
 ```
 ### 7. foreach X in E do C od
 ``` JavaScript
+
 
 function function_foreach (X,E)
 {
@@ -106,21 +108,19 @@ function function_foreach (X,E)
 ```
 
 
-### 8. V0,...,Vn = E0,...En
+### 8. V1,...,Vn = E1,...En
 Les Vi et les Ei designeront les traductions des noms de variable données par la table des variables.
 
 ```JavaScript
 var tampon = new Array();
-tampon.push(E0);
-tampon.push(E1);
-...
-tampon.push(En);
-
-V0 = tampon[0];
-V1 = tampon[1];
-...
-Vn = tampon[n];
-
+for (int i=1;i<=n;i++)
+{
+	tampon.push(Ei)
+}
+for(int i=1;i<=n;i++)
+{
+	Vi = tampon[i];
+}
 
 ```
 
@@ -136,15 +136,14 @@ for(int i=0;i<m;i++)
 }
 
 ```
-<<<<<<< HEAD
-### 10. for X do X:=(cons nil X) od
-=======
-### 10. for X do X := Expr
->>>>>>> origin/master
+### 10. for X do X := E od
 X désignera la traduction du nom de variable X comme le définit la table des variables.
 
 ``` JavaScript
- 
+X'=LibWh2JS.clone(X);
+feuilleHd=LibWh.getFeuilleHd(X);
+hd(feuilleHd)= new Tree(X');
+
 ```
 
 ### 11. X := (cons a b)
