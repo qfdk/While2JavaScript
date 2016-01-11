@@ -80,7 +80,7 @@ while (E!= nil)
 Sa traduction donne :
 
 ``` JavaScript
-var cpt0 = LibWh2JS.countRight(E);
+int cpt0 = LibWh2JS.countRight(E);
 for (var i0 = 0; i0 < cpt0; i0++){
     traduction(C)
 }
@@ -149,10 +149,8 @@ hd(feuilleHd)= new Tree(X');
 ### 11. X := (cons a b)
 
 ``` JavaScript
- // Un construction d'arbre binaire récursive, pour chaque cons on construit un nouvel arbre
-X = new Tree()
-X.insert(a)
-X.insert(b)
+ // Un construction que nous allons définir
+X = new BinTree(a,b)
 ```
 ## Code 3@ - Machine
 
