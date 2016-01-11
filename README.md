@@ -6,6 +6,8 @@
   Le but est de creer un compilateur qui permet de faire la traduction, c'est à dire qu'on donne un fichier de **While** en sortant un fichier **JavaScript**. Avec ce fichier on peut l'utiliser dans un site web.
 
 ### Archi
+
+``` java
 .
 ├── README.md
 ├── index.md
@@ -19,6 +21,7 @@
     └── wh_source.wh
 
 11 directories, 12 files
+```
 
 ### History
 
