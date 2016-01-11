@@ -149,8 +149,10 @@ hd(feuilleHd)= new Tree(X');
 ### 11. X := (cons a b)
 
 ``` JavaScript
- // Un construction que nous allons définir
-X = new BinTree(a,b)
+ // Un construction d'arbre binaire récursive, pour chaque cons on construit un nouvel arbre
+X = new Tree()
+X.insert(a)
+X.insert(b)
 ```
 ## Code 3@ - Machine
 
