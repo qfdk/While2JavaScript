@@ -1,5 +1,5 @@
 'use strict';
-
+var  nil;
 function Node(data, left, right) {
 	this.data = data;
 	this.left = left;
@@ -11,8 +11,9 @@ Node.prototype.getData = function() {
 };
 
 //arbre binaire
-function Tree() {
+function Tree(data,dataL,dataR) {
 	this.root = null;
+	this.insert(data,dataL,dataR);
 }
 
 // insert le data
@@ -20,56 +21,42 @@ function Tree() {
 //2. test la valeur < this, 3 sinon 4
 //3.
 //4.
-Tree.prototype.insert = function(data) {
+Tree.prototype.insert = function(data,dataL,dataR) {
 
-	let n = new Node(data, null, null);
-	if (!this.root) {
-		this.root = n;
-	} else {
-		let current = this.root;
-		let parent;
-		while (true) {
-			parent = current;
-			if (data < current.getData()) {
-				current = current.left;
-				if (!current) {
-					parent.left = n;
-					break;
-				}
-			} else {
-				current = current.right;
-				if (!current) {
-					parent.right = n;
-					break;
-				}
-			}
-		}
-	}
+		this.root = new Node(data, null, null);
+		this.root.left = dataL;
+		this.root.right = dataR;
 };
 
+Tree.prototype.getRight=function()
+{
+	return this.root.right;
+};
+
+Tree.prototype.getLeft=function()
+{
+	return this.root.left;
+};
+
+Tree.prototype.getRoot=function()
+{
+	return this.root;
+};
 // nombre de node totale
 Tree.prototype.countNode = function(node) {
 	if (!node) return 0;
 	return this.countNode(node.left) + this.countNode(node.right) + 1;
 };
-// nombre de node a doite
-Tree.prototype.countRight = function(node) {
-	if (!node) return 0;
-	return this.countRight(node.right) + 1;
-};
-// un parcours
-Tree.prototype.affichage = function(node) {
-	if (node) {
-		console.log(node.getData());
-		this.affichage(node.left);
-		this.affichage(node.right);
-	}
-};
 
-function coucou()
-{
-	console.log("coucou");
-}
+Tree.prototype.countRight = function() {
+	var tmp = this;
+	var cpt=0;
+	while ((tmp != nil)  && (tmp.root != nil)) {
+		cpt++;
+		tmp=tmp.root.right;
+	}
+	return cpt;
+};
 
 // reuperer une valeur de inputX
 function getValeur(v) {
@@ -77,20 +64,9 @@ function getValeur(v) {
 	return rest.value;
 }
 
-function calculer() {
-	var c = getValeur(0) + getValeur(2);
-	document.getElementById("resultat").value = c;
-	document.getElementById("res").innerHTML = c;
-}
+// var t=new Tree(1,2,0);
+	// var t1=new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,nil))));
+// t.insert(1,2,new Tree(3,5,new Tree(3,5,4)));
 
-
-var tree = new Tree();
-
-tree.insert("cons");
-tree.insert("x");
-tree.insert("nil");
-
-tree.insert(tree);
-
-console.log(tree.affichage(tree.root));
-console.log(tree.countRight(tree.root));
+// console.log(t.getRight().getRight().getRight().getRight());
+// console.log(t1.countRight());

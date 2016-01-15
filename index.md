@@ -24,6 +24,7 @@ En 2012, l'ensemble des navigateurs web modernes disposent d'un ramasse-miettes 
 1. Pretty Printer
 2. Table des symboles
 3. Code 3@
+4. La bibliotheque du JavaScript
 
 ## Spécification : Traduction de while en javascript
 Pas d'erreur à la l'exécution implique que toutes les variables doivent être initialisés. Nous nous arrangeons à ce qu'il n'y ait pas d'erreur à l’exécution.
@@ -235,4 +236,77 @@ X = new BinTree(a,b)
 ###  R -> E =? E'
 ```
 	<=?,R,E,E'>
+```
+
+## La biblioteque du JavaScript
+
+### TreeBinaire
+
+```javascript
+'use strict';
+
+function Node(data, left, right) {
+	this.data = data;
+	this.left = left;
+	this.right = right;
+}
+
+Node.prototype.getData = function() {
+	return this.data;
+};
+
+//arbre binaire
+function Tree(data,dataL,dataR) {
+	this.root = null;
+	this.insert(data,dataL,dataR);
+}
+
+// insert le data
+Tree.prototype.insert = function(data,dataL,dataR) {
+
+		this.root = new Node(data, null, null);
+		this.root.left = dataL;
+		this.root.right = dataR;
+};
+
+Tree.prototype.getRight=function()
+{
+	return this.root.right;
+};
+
+Tree.prototype.getLeft=function()
+{
+	return this.root.left;
+};
+
+// nombre de node totale
+Tree.prototype.countNode = function(node) {
+	if (!node) return 0;
+	return this.countNode(node.left) + this.countNode(node.right) + 1;
+};
+// nombre de node a doite
+Tree.prototype.countRight = function(node) {
+	if (!node) return 0;
+	return this.countRight(node.right) + 1;
+};
+
+// reuperer une valeur de inputX
+function getValeur(v) {
+	var rest = document.getElementsByTagName("input")[v];
+	return rest.value;
+}
+
+function lancer() {
+	var res=new Array();
+	f2(res,getValeur(0),getValeur(1));
+	// document.getElementById("resultat").value = c;
+	document.getElementById("res").innerHTML = res.toString();
+}
+
+// example
+var t=new Tree();
+t.insert(1,2,new Tree(3,5,4));
+console.log(t.root.right);
+// console.log(t.affichage(this.root));
+
 ```
