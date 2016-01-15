@@ -2,9 +2,9 @@
 ### Introduction
 Ce projet a pour objectif de compiler un programme écrit avec le langage While en un programme JavaScript. Nous travaillons en mode agile,les différents sprints ont une durée de une à deux semaines. A chaque fin de sprint,nous fournissons un délivrable pour construire le compilateur. Voici les membres de notre groupe :
 
+Youssouf Maiga : Chef de projet
 Bastien Cloarec
 Haozhi Li
-Youssouf Maiga
 Salifou Nguetcheu
 Baptiste Buron
 
@@ -238,13 +238,17 @@ X = new BinTree(a,b)
 	<=?,R,E,E'>
 ```
 
-## La biblioteque du JavaScript
+## La bibliothèque du JavaScript
 
 ### TreeBinaire
 
 ```javascript
 'use strict';
+
+//On définie la variable nil, comme dit précédemment, nil = undefined
 var  nil;
+
+
 function Node(data, left, right) {
 	this.data = data;
 	this.left = left;
@@ -255,17 +259,16 @@ Node.prototype.getData = function() {
 	return this.data;
 };
 
-//arbre binaire
+//Créer un arbre binaire
 function Tree(data,dataL,dataR) {
 	this.root = null;
 	this.insert(data,dataL,dataR);
 }
 
-// insert le data
-//1. test si on a le racine
-//2. test la valeur < this, 3 sinon 4
-//3.
-//4.
+// Insérer les données dans un arbre
+//1. On crée un nouveau noeud dont racine à deux fils. Le premier paramètre correspond à la racine de l'arbre
+//2. Le deuxième paramètre correspond au fils gauche de la racine
+//3. Le troisième paramètre correspond au fils droit de la racine
 Tree.prototype.insert = function(data,dataL,dataR) {
 
 		this.root = new Node(data, null, null);
@@ -287,12 +290,14 @@ Tree.prototype.getRoot=function()
 {
 	return this.root;
 };
-// nombre de node totale
+
+// Obtenir le nombre de noeuds total
 Tree.prototype.countNode = function(node) {
 	if (!node) return 0;
 	return this.countNode(node.left) + this.countNode(node.right) + 1;
 };
 
+//Obtenir le nombre de noeuds à droite de la racine de l'arbre
 Tree.prototype.countRight = function() {
 	var tmp = this;
 	var cpt=0;
@@ -303,7 +308,7 @@ Tree.prototype.countRight = function() {
 	return cpt;
 };
 
-// reuperer une valeur de inputX
+// Récuperer une valeur de inputX
 function getValeur(v) {
 	var rest = document.getElementsByTagName("input")[v];
 	return rest.value;
@@ -311,9 +316,7 @@ function getValeur(v) {
 
 var t=new Tree(1,2,0);
 var t1=new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,nil))));
-// t.insert(1,2,new Tree(3,5,new Tree(3,5,4)));
 
-// console.log(t.getRight().getRight().getRight().getRight());
 console.log(t1.countRight());
 
 ```
