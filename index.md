@@ -308,7 +308,7 @@ Tree.prototype.countRight = function() {
 	return cpt;
 };
 
-// Récuperer une valeur de inputX
+// Récupérer une valeur de inputX
 function getValeur(v) {
 	var rest = document.getElementsByTagName("input")[v];
 	return rest.value;

@@ -5,7 +5,7 @@
   En année 2015-2016, nous avons appris le cours compilation ....
   Le but est de creer un compilateur qui permet de faire la traduction, c'est à dire qu'on donne un fichier de **While** en sortant un fichier **JavaScript**. Avec ce fichier on peut l'utiliser dans un site web.
 
-### Archi
+### Architecture
 
 ``` java
 .
@@ -14,13 +14,13 @@
 ├── js
 │   └── lib_wh2js.js
 ├── released
-│   └── whpp.jar
+│   └── Demo.zip
 └── wh
     ├── Langage_while_tables_symboles.zip
     ├── Whi.xtext
     └── wh_source.wh
 
-11 directories, 12 files
+3 directories, 7 files
 ```
 
 ### History
