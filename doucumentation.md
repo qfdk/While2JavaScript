@@ -2,16 +2,13 @@
 ### Introduction
 Ce projet a pour objectif de compiler un programme écrit avec le langage While en un programme JavaScript. Nous travaillons en mode agile,les différents sprints ont une durée de une à deux semaines. A chaque fin de sprint,nous fournissons un délivrable pour construire le compilateur. Voici les membres de notre groupe :
 
-Youssouf Maiga : Chef de projet
-Bastien Cloarec
-Haozhi Li
-Salifou Nguetcheu
-Baptiste Buron
+Bastien Cloarec| Baptiste Buron|Haozhi Li
+Youssouf Maiga|Salifou Nguetcheu
 
 ### Getting start
 Nous avons créé un dépôt git pour avoir une bonne gestion du projet
 
-    git clone http://qfdk.github.io/While2JavaScript && cd While2JavaScript && make
+    git clone http://qfdk.github.io/While2JavaScript && cd While2JavaScript
 
 ## Machine cible
 ### Sémantique opérationnelle
@@ -241,66 +238,61 @@ X = new BinTree(a,b)
 ## La bibliothèque du JavaScript
 
 ### TreeBinaire
-
-```javascript
+``` javascript
 'use strict';
 
-//On définie la variable nil, comme dit précédemment, nil = undefined
 var  nil;
-
-
+// Definition du Node
 function Node(data, left, right) {
 	this.data = data;
 	this.left = left;
 	this.right = right;
 }
-
+// obtenir l'element
 Node.prototype.getData = function() {
 	return this.data;
 };
 
-//Créer un arbre binaire
+// arbre binaire
 function Tree(data,dataL,dataR) {
 	this.root = null;
 	this.insert(data,dataL,dataR);
 }
 
-// Insérer les données dans un arbre
-//1. On crée un nouveau noeud dont racine à deux fils. Le premier paramètre correspond à la racine de l'arbre
-//2. Le deuxième paramètre correspond au fils gauche de la racine
-//3. Le troisième paramètre correspond au fils droit de la racine
+// insert le data pour consture un arbre
 Tree.prototype.insert = function(data,dataL,dataR) {
 
 		this.root = new Node(data, null, null);
 		this.root.left = dataL;
 		this.root.right = dataR;
 };
-
+// obtenir le fils droit
 Tree.prototype.getRight=function()
 {
 	return this.root.right;
 };
-
+// obtenir le fils gauche
 Tree.prototype.getLeft=function()
 {
 	return this.root.left;
 };
 
-Tree.prototype.getRoot=function()
-{
-	return this.root;
-};
+// obtenir le node
+// Tree.prototype.getRoot=function()
+// {
+// 	return this.root;
+// };
 
-// Obtenir le nombre de noeuds total
+// nombre de node totale
 Tree.prototype.countNode = function(node) {
 	if (!node) return 0;
 	return this.countNode(node.left) + this.countNode(node.right) + 1;
 };
-
-//Obtenir le nombre de noeuds à droite de la racine de l'arbre
+// compter le fils droit
 Tree.prototype.countRight = function() {
 	var tmp = this;
 	var cpt=0;
+	// cas d'arret
 	while ((tmp != nil)  && (tmp.root != nil)) {
 		cpt++;
 		tmp=tmp.root.right;
@@ -308,15 +300,20 @@ Tree.prototype.countRight = function() {
 	return cpt;
 };
 
-// Récupérer une valeur de inputX
+// reuperer une valeur de inputX
 function getValeur(v) {
 	var rest = document.getElementsByTagName("input")[v];
 	return rest.value;
 }
 
-var t=new Tree(1,2,0);
-var t1=new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,nil))));
+//Test
 
-console.log(t1.countRight());
+// var t=new Tree(1,2,0);
+// var t1=new Tree("nil",nil,new Tree("nil",nil,
+// new Tree("nil",nil,new Tree("nil",nil,nil))));
+// t.insert(1,2,new Tree(3,5,new Tree(3,5,4)));
+
+// console.log(t.getRight().getRight().getRight().getRight());
+// console.log(t1.countRight());
 
 ```

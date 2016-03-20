@@ -1,56 +1,57 @@
 'use strict';
+
 var  nil;
+// Definition du Node
 function Node(data, left, right) {
 	this.data = data;
 	this.left = left;
 	this.right = right;
 }
-
+// obtenir l'element
 Node.prototype.getData = function() {
 	return this.data;
 };
 
-//arbre binaire
+// arbre binaire
 function Tree(data,dataL,dataR) {
 	this.root = null;
 	this.insert(data,dataL,dataR);
 }
 
-// insert le data
-//1. test si on a le racine
-//2. test la valeur < this, 3 sinon 4
-//3.
-//4.
+// insert le data pour consture un arbre
 Tree.prototype.insert = function(data,dataL,dataR) {
 
 		this.root = new Node(data, null, null);
 		this.root.left = dataL;
 		this.root.right = dataR;
 };
-
+// obtenir le fils droit
 Tree.prototype.getRight=function()
 {
 	return this.root.right;
 };
-
+// obtenir le fils gauche
 Tree.prototype.getLeft=function()
 {
 	return this.root.left;
 };
 
-Tree.prototype.getRoot=function()
-{
-	return this.root;
-};
+// obtenir le node
+// Tree.prototype.getRoot=function()
+// {
+// 	return this.root;
+// };
+
 // nombre de node totale
 Tree.prototype.countNode = function(node) {
 	if (!node) return 0;
 	return this.countNode(node.left) + this.countNode(node.right) + 1;
 };
-
+// compter le fils droit
 Tree.prototype.countRight = function() {
 	var tmp = this;
 	var cpt=0;
+	// cas d'arret
 	while ((tmp != nil)  && (tmp.root != nil)) {
 		cpt++;
 		tmp=tmp.root.right;
@@ -64,8 +65,10 @@ function getValeur(v) {
 	return rest.value;
 }
 
+//Test
+
 // var t=new Tree(1,2,0);
-	// var t1=new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,nil))));
+// var t1=new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,new Tree("nil",nil,nil))));
 // t.insert(1,2,new Tree(3,5,new Tree(3,5,4)));
 
 // console.log(t.getRight().getRight().getRight().getRight());
